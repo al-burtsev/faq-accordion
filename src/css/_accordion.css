@@ -25,6 +25,7 @@
 
 .accordion__title {
   font-size: clamp(1rem, 4vw, 1.125rem);
+  font-weight: 600;
   line-height: 1.2;
   color: var(--color-accent-950);
   transition: color .3s ease-in-out;
@@ -38,7 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 1rem;
   padding-block: 1.3rem;
   list-style: none;
   cursor: pointer;
