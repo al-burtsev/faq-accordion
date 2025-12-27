@@ -1,0 +1,112 @@
+.accordion__trigger {
+  border-bottom: 0.0625rem solid var(--color-accent-100);
+  border-top: 0.0625rem solid transparent;
+  overflow-y: clip;
+
+  &:last-child {
+    border-bottom-color: transparent;
+  }
+
+  &:focus-within {
+    border-color: var(--color-accent-700);
+  }
+}
+
+.accordion__trigger::details-content {
+  block-size: 0;
+  transition: block-size .4s,
+    content-visibility .4s;
+  transition-behavior: allow-discrete;
+}
+
+.accordion__trigger[open]::details-content {
+  block-size: auto;
+}
+
+.accordion__title {
+  font-size: clamp(1rem, 4vw, 1.125rem);
+  line-height: 1.2;
+  color: var(--color-accent-950);
+  transition: color .3s ease-in-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition-duration: .6s;
+  }
+}
+
+.accordion__control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 1.3rem;
+  list-style: none;
+  cursor: pointer;
+
+  @media (any-hover: hover) {
+    &:hover .accordion__title {
+      color: var(--color-accent-700);
+    }
+  }
+
+  &:focus {
+    outline: transparent;
+  }
+}
+
+.accordion__icon {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  background-color: var(--color-accent-700);
+  transition: transform .3s ease-in, background-color .3s ease-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition-duration: .6s;
+  }
+}
+
+.accordion__icon::after,
+.accordion__icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 0.125rem;
+  border-radius: 0.125rem;
+  background: var(--color-neuitral);
+  transform: translate(-50%, -50%);
+}
+
+.accordion__icon::after {
+  height: 50%;
+  width: 0.125rem;
+  scale: 1;
+  transition: opacity .3s, scale .3s ease-in-out;
+}
+
+.accordion__content {
+  padding-block-end: 1.5rem;
+  font-size: clamp(0.875rem, 3vw, 1rem);
+  color: var(--color-accent-600);
+}
+
+.accordion__trigger[open] .accordion__icon {
+  background-color: var(--color-accent-950);
+  transform: rotate(-180deg);
+}
+
+.accordion__trigger[open] .accordion__icon::after {
+  opacity: 0;
+  scale: 0;
+}
+
+@media (width > 768px) {
+  .accordion__control {
+    padding-block: 1.7rem;
+  }
+}
