@@ -35,7 +35,6 @@ body {
   background-color: var(--color-accent-100);
   background-image: url(../images/background-pattern-mobile.svg);
   background-repeat: repeat-x;
-  background-size: contain;
 }
 
 @media (width > 375px) {
@@ -97,6 +96,6 @@ body {
   .faq__content {
     padding: 2.5rem 2.5rem 1rem;
     border-radius: 1rem;
-    box-shadow: 0px 0px 3rem 0px var(--color-accent-100);
+    box-shadow: 0px 0px 1rem 0px var(--color-accent-100);
   }
 }
