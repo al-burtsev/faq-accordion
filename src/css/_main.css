@@ -85,7 +85,7 @@ body {
   padding-block-end: 0;
   border-radius: 0.5rem;
   background-color: var(--color-neuitral);
-  box-shadow: 0px 0px .5rem 0px var(--color-accent-100);
+  box-shadow: 0px 0px .5rem 0px var(--color-accent-600);
 }
 
 .faq__content:has(details:last-child:focus-within, details:last-child[open]) {
@@ -96,6 +96,6 @@ body {
   .faq__content {
     padding: 2.5rem 2.5rem 1rem;
     border-radius: 1rem;
-    box-shadow: 0px 0px 1rem 0px var(--color-accent-100);
+    box-shadow: 0px 0px 1rem 0px var(--color-accent-600);
   }
 }
